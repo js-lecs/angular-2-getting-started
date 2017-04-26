@@ -1,5 +1,5 @@
 <app-header>
-  <h2> Render HTML through parent component to Header</h2>
+  <!-- render data -->
 </app-header>
 <hr>
 <div class="container">
@@ -8,13 +8,19 @@
   <hr>
   <h5>Control Directives Example</h5>
   <ul class="list-group">
-    <template ngFor let-cricketer [ngForOf]="cricketers">
+    <!--<template ngFor let-cricketer [ngForOf]="cricketers">
       <li class="list-group-item" *ngIf="cricketer.type == 'Batsman'">
-        <span>
+    
+     {{cricketer.name}} - {{cricketer.type}} - {{cricketer.birthday | date:"yyyy-MM-dd"}}
+    
+      </li>
+    </template>-->
+
+    <li class="list-group-item" *ngFor="let cricketer of cricketers">
+      <span *ngIf="cricketer.type == 'Batsman'">
      {{cricketer.name}} - {{cricketer.type}} - {{cricketer.birthday | date:"yyyy-MM-dd"}}
      </span>
-      </li>
-    </template>
+    </li>
 
   </ul>
 
@@ -36,7 +42,7 @@
   <input type="checkbox" name="bool" [(ngModel)]="buttonHideProp">Toggle Show/Hide Button
 
 
-  <hr>
+  <!--<hr>
   <h5 [class]="classname"> Example for property Binding with Class</h5>
   <select name="classChange" [(ngModel)]="classname">
    <option value="pink">Pink</option>
@@ -44,6 +50,6 @@
             <option value="blue">Blue</option>
                 <option value="yellow">Yellow</option>
  
-  </select>
+  </select>-->
 
 </div>
