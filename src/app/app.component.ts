@@ -9,6 +9,8 @@ export class AppComponent implements OnInit {
 
   name: String = 'This is an example for data binding';
 
+  activeTab: string = 'tab1';
+
   cricketers: Array<any> = [
     {
       name: 'Sanath Jayasuriya',
@@ -43,4 +45,11 @@ export class AppComponent implements OnInit {
     alert('Button Clicked');
   }
 
+  handleEmit(value) {
+    console.log('Parent function excuted with ', value);
+  }
+
+  changeTab(tabName: string) {
+    this.activeTab = tabName;
+  }
 }

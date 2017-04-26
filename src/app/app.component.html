@@ -3,53 +3,25 @@
 </app-header>
 <hr>
 <div class="container">
-  <h1> {{name}} </h1>
 
-  <hr>
-  <h5>Control Directives Example</h5>
-  <ul class="list-group">
-    <!--<template ngFor let-cricketer [ngForOf]="cricketers">
-      <li class="list-group-item" *ngIf="cricketer.type == 'Batsman'">
-    
-     {{cricketer.name}} - {{cricketer.type}} - {{cricketer.birthday | date:"yyyy-MM-dd"}}
-    
-      </li>
-    </template>-->
-
-    <li class="list-group-item" *ngFor="let cricketer of cricketers">
-      <span *ngIf="cricketer.type == 'Batsman'">
-     {{cricketer.name}} - {{cricketer.type}} - {{cricketer.birthday | date:"yyyy-MM-dd"}}
-     </span>
-    </li>
-
-  </ul>
+  <button class="btn " [ngClass]="{'btn-info': activeTab === 'tab1'}" (click)="changeTab('tab1')" >
+    Tab1</button>
+  <button class="btn " [ngClass]="{'btn-info': activeTab === 'tab2'}" (click)="changeTab('tab2')" >
+    Tab2</button>
 
 
-
-  <br>
-  <hr>
-  <h5> Two way dataBinding: {{dataBinding}}</h5>
-  <input type="text" class="form-control" [(ngModel)]="dataBinding">
-
-
-
-  <hr>
-
-  <div [hidden]="buttonHideProp">
-    <button type="button" class="btn btn-info" (click)="btnClickExample()">Button Click Example</button>
-  </div>
-  <br>
-  <input type="checkbox" name="bool" [(ngModel)]="buttonHideProp">Toggle Show/Hide Button
-
-
-  <!--<hr>
-  <h5 [class]="classname"> Example for property Binding with Class</h5>
-  <select name="classChange" [(ngModel)]="classname">
-   <option value="pink">Pink</option>
-        <option value="red">Red</option>
-            <option value="blue">Blue</option>
-                <option value="yellow">Yellow</option>
- 
-  </select>-->
+  <app-tab1 [hidden]="activeTab !== 'tab1'"></app-tab1>
+  <app-tab2 [hidden]="activeTab !== 'tab2'"></app-tab2>
 
 </div>
+
+
+
+
+<hr>
+<app-component-example [cricketers]="cricketers" (btnClickEmit)="handleEmit($event)">
+
+  <h2>Hello this is written inside Parent Component</h2>
+
+
+</app-component-example>

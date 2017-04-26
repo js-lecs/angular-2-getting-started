@@ -1,0 +1,57 @@
+<div class="container">
+  <h1> {{name}} </h1>
+
+  <hr>
+  <h5>Control Directives Example</h5>
+  <ul class="list-group">
+
+
+    <template ngFor let-cricketer [ngForOf]="cricketers">
+      <li class="list-group-item" *ngIf="cricketer.type == 'Batsman'">
+
+        {{cricketer.name}} - {{cricketer.type}} - {{cricketer.birthday | date:"yyyy-MM-dd"}}
+
+      </li>
+    </template>
+
+
+  </ul>
+
+
+
+  <br>
+  <hr>
+  <h5> Two way dataBinding: {{dataBinding}}</h5>
+  <input type="text" class="form-control" [(ngModel)]="dataBinding">
+
+
+
+  <hr>
+
+  <div [hidden]="buttonHideProp">
+    <button type="button" class="btn btn-info" (click)="btnClickExample()">Button Click Example</button>
+  </div>
+  <br>
+  <input type="checkbox" name="bool" [(ngModel)]="buttonHideProp">Toggle Show/Hide Button
+
+
+  <br>
+  <hr>
+
+  <h3 [class]="h3Class"> Property binding new Example</h3>
+
+Selected Class : {{h3Class}} 
+<br>
+  <select name="changeClass" [(ngModel)]="h3Class">
+
+    <option value="pink">Pink</option>
+  <option value="blue">Blue</option>
+    <option value="grey">Grey</option>
+
+  </select>
+
+  <hr>
+</div>
+
+<h2> This exisits in child component</h2>
+<ng-content></ng-content>
