@@ -1,3 +1,48 @@
-<h1>
-  {{title}}
-</h1>
+<app-header>
+</app-header>
+<hr>
+<div class="container">
+  <h1> {{name}} </h1>
+
+  <hr>
+  <h5>Control Directives Example</h5>
+  <ul class="list-group">
+    <template ngFor let-cricketer [ngForOf]="cricketers">
+      <li class="list-group-item" *ngIf="cricketer.type == 'Batsman'">
+        <span>
+     {{cricketer.name}} - {{cricketer.type}} - {{cricketer.birthday | date:"yyyy-MM-dd"}}
+     </span>
+      </li>
+    </template>
+
+  </ul>
+
+
+
+  <br>
+  <hr>
+  <h5> Two way dataBinding: {{dataBinding}}</h5>
+  <input type="text" class="form-control" [(ngModel)]="dataBinding">
+
+
+
+  <hr>
+
+  <div [hidden]="buttonHideProp">
+    <button type="button" class="btn btn-info" (click)="btnClickExample()">Button Click Example</button>
+  </div>
+  <br>
+  <input type="checkbox" name="bool" [(ngModel)]="buttonHideProp">Toggle Show/Hide Button
+
+
+  <hr>
+  <h5 [class]="classname"> Example for property Binding with Class</h5>
+  <select name="classChange" [(ngModel)]="classname">
+   <option value="pink">Pink</option>
+        <option value="red">Red</option>
+            <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+ 
+  </select>
+
+</div>
