@@ -5,11 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { DirectiveExampleComponent } from './directive-example/directive-example.component';
+import { UnlessDirective } from './directives/unless.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HighlightDirective,
+    DirectiveExampleComponent,
+    UnlessDirective,
+
   ],
   imports: [
     BrowserModule,
