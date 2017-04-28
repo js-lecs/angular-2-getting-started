@@ -1,7 +1,10 @@
- 
 <h1> Attribute Directive Example</h1>
 
-<h1 [highlight]="'grey'"> Some text with highlight!</h1>
+<div [highlight]="'grey'" style="height:100px">
+
+    <h1>Some text with highlight!</h1>
+
+</div>
 
 
 <h3 *ngIf="someBoolean"> Now I am at IF</h3>
@@ -10,4 +13,3 @@
 
 <input type="checkbox" name="check" [(ngModel)]="someBoolean"> Change the Value
 <p> Current boolean value is : {{someBoolean}}</p>
- 
