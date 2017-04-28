@@ -1,7 +1,13 @@
-<h1 appHighlight="yellow" defaultColor="red"> This is an Attribute directive Example</h1>
-<hr>
+ 
+<h1> Attribute Directive Example</h1>
 
-<h2> Unless Demo</h2>
-<input type="checkbox" [(ngModel)]="show"> If this is not ticked, Show
+<h1 [highlight]="'grey'"> Some text with highlight!</h1>
 
-<h3 *appUnless="show">Conditional Text</h3>
+
+<h3 *ngIf="someBoolean"> Now I am at IF</h3>
+
+<h3 *unless="someBoolean"> Now I am at Else</h3>
+
+<input type="checkbox" name="check" [(ngModel)]="someBoolean"> Change the Value
+<p> Current boolean value is : {{someBoolean}}</p>
+ 

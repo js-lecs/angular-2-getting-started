@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveExampleComponent implements OnInit {
 
+
+  someBoolean: Boolean = true;
+
+
   constructor() { }
 
   ngOnInit() {

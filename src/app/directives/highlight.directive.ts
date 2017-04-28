@@ -1,11 +1,11 @@
 import { Directive, ElementRef, Renderer, HostListener, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[highlight]'
 })
 export class HighlightDirective {
   @Input() defaultColor = 'white';
-  @Input('appHighlight') highlightColor = 'yellow';
+  @Input('highlight') highlightColor = 'yellow';
 
   private backgroundColor = this.defaultColor;
 
